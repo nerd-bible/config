@@ -20,5 +20,5 @@ jobs:
         with:
           node-version: 'lts/*'
           registry-url: 'https://registry.npmjs.org'
-      - run: node ./pkgWrite.ts
+      - run: node ./pkgWrite.ts "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY"
       - run: npm publish --verbose
