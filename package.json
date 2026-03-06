@@ -3,5 +3,8 @@
 	"type": "module",
 	"devDependencies": {
 		"@types/node": "^25.3.5"
+	},
+	"peerDependencies": {
+		"prettier": "^3.8.1"
 	}
 }
