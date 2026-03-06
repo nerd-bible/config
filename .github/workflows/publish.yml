@@ -20,6 +20,5 @@ jobs:
         with:
           node-version: "lts/*"
           registry-url: "https://registry.npmjs.org"
-      - run: npm i
-      - run: npx -p @nerd-bible/config pkgWrite
+      - run: node ./scripts/pkgWrite.ts
       - run: npm publish --verbose
