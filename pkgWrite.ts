@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { execGit, tagCmd } from "./execGit.ts";
 
-const repoUrl = process.argv.slice(2).find((a) => !a.startsWith("--"));
+const repoUrl = process.argv[3];
 if (!repoUrl) throw Error("Required arg: repo URL");
 
 const version = execGit(`${tagCmd} --exact-match`, true);
