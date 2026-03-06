@@ -16,7 +16,7 @@
 		"./tsconfig.json": "./tsconfig.json"
 	},
 	"bin": {
-		"pkgWrite": "./scripts/pkgWrite.ts",
-		"gitBump": "./scripts/gitBump.ts"
+		"pkgWrite": "./scripts/pkgWrite.js",
+		"gitBump": "./scripts/gitBump.js"
 	}
 }

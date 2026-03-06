@@ -9,9 +9,12 @@ if (version) throw Error(`Current commit already has tag ${version}`);
 const lastVersion = execGit(tagCmd, true) ?? "v0.0.0";
 console.log("Bumping", lastVersion);
 
+if (!lastVersion.match(/v[0-9]+\.[0-9]+\.[0-9]+/))
+	throw Error(`invalid version number ${lastVersion}`);
+
 const split = lastVersion.split(".");
 // Tags should only be missing for minor bumps.
-const last = parseInt(split.pop()!) + 1;
+const last = parseInt(split.pop()) + 1;
 version = [...split, last].join(".");
 
 console.log("Tagging", version);

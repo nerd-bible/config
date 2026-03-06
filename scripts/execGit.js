@@ -1,6 +1,9 @@
 import { execSync } from "node:child_process";
 
-export function execGit(args: string, allowFailure = false): string {
+/**
+ * @param {string} args
+ */
+export function execGit(args, allowFailure = false) {
 	try {
 		return execSync(`git ${args}`, {
 			encoding: "utf8",
