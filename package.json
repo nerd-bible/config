@@ -12,7 +12,8 @@
 		"fmt-fix": "npm run fmt -- --write"
 	},
 	"exports": {
-		"./prettier": "./prettier.config.js"
+		"./prettier": "./prettier.config.js",
+		"./tsconfig.json": "./tsconfig.json"
 	},
 	"bin": {
 		"pkgWrite": "./scripts/pkgWrite.ts",
