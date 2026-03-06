@@ -1,0 +1,6 @@
+{
+	"name": "@nerd-bible/config",
+	"devDependencies": {
+		"@types/node": "^25.3.5"
+	}
+}
