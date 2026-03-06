@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { readFileSync, writeFileSync } from "node:fs";
-import { execGit, tagCmd } from "./execGit.ts";
+import { execGit, tagCmd } from "./execGit.js";
 
 const server = process.env["SERVER_URL"] ?? process.env["GITHUB_SERVER_URL"];
 const repo = process.env["REPOSITORY"] ?? process.env["GITHUB_REPOSITORY"];

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { execGit, tagCmd } from "./execGit.ts";
+import { execGit, tagCmd } from "./execGit.js";
 
 execGit("fetch --tags");
 let version = execGit(`${tagCmd} --exact-match`, true);
