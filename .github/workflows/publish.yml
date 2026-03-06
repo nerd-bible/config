@@ -20,5 +20,5 @@ jobs:
         with:
           node-version: "lts/*"
           registry-url: "https://registry.npmjs.org"
-      - run: node ./scripts/pkgWrite.ts
+      - run: node ./scripts/pkgWrite.js
       - run: npm publish --verbose
