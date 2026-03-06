@@ -1,12 +1,10 @@
+#!/usr/bin/env node
 import { execGit, tagCmd } from "./execGit.ts";
 
 execGit("fetch --tags");
 let version = execGit(`${tagCmd} --exact-match`, true);
 
-if (version) {
-	console.warn("Current commit already has tag", version);
-	process.exit(1);
-}
+if (version) throw Error(`Current commit already has tag ${version}`);
 
 const lastVersion = execGit(tagCmd, true) ?? "v0.0.0";
 console.log("Bumping", lastVersion);
