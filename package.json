@@ -6,5 +6,9 @@
 	},
 	"peerDependencies": {
 		"prettier": "^3.8.1"
+	},
+	"scripts": {
+		"fmt": "prettier --check --ignore-path .gitignore .",
+		"fmt-fix": "npm run fmt -- --write"
 	}
 }

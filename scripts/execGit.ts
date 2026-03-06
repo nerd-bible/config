@@ -12,4 +12,5 @@ export function execGit(args: string, allowFailure = false): string {
 	}
 }
 
-export const tagCmd = "describe --tags --abbrev=0 --match='v[0-9]*.[0-9]*.[0-9]*'";
+export const tagCmd =
+	"describe --tags --abbrev=0 --match='v[0-9]*.[0-9]*.[0-9]*'";
