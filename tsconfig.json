@@ -6,6 +6,7 @@
 		// Target bundlers and latest versions of Node
 		"target": "esnext",
 		"module": "esnext",
+		"lib": ["esnext"],
 		"moduleResolution": "bundler",
 		// Only drop imports with `type` modifier
 		"verbatimModuleSyntax": true,
