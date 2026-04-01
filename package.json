@@ -2,8 +2,8 @@
 	"name": "@nerd-bible/config",
 	"version": "0.0.0",
 	"type": "module",
-	"devDependencies": {
-		"@types/node": "^25.3.5"
+	"dependencies": {
+		"@types/node": "^25.5.0"
 	},
 	"peerDependencies": {
 		"prettier": "^3.8.1"
