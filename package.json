@@ -3,10 +3,10 @@
 	"version": "0.0.0",
 	"type": "module",
 	"peerDependencies": {
-		"@types/node": "^25.5.0",
-		"expect": "^30.3.0",
-		"prettier": "^3.8.1",
-		"typescript": "^6.0.2"
+		"@types/node": "^26.1.2",
+		"expect": "^30.4.1",
+		"prettier": "^3.9.6",
+		"typescript": "^7.0.2"
 	},
 	"scripts": {
 		"fmt": "prettier --check --ignore-path .gitignore .",
