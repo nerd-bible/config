@@ -12,7 +12,7 @@ const version = execGit(`${tagCmd} --exact-match`, true);
 
 console.log("Writing package.json");
 const pkg = JSON.parse(readFileSync("package.json", "utf8"));
-if (pkg.name.startsWith(namespace)) pkg.name = namespace + "/" + pkg.name;
+if (!pkg.name.startsWith(namespace)) pkg.name = namespace + "/" + pkg.name;
 pkg.version = version.substring(1);
 pkg.repository = { url: `${server}/${repo}` };
 writeFileSync("package.json", JSON.stringify(pkg, null, 2));
