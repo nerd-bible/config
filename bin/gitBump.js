@@ -2,22 +2,20 @@
 import { execGit, tagCmd } from "./execGit.js";
 
 execGit("fetch --tags");
-let version = execGit(`${tagCmd} --exact-match`, true);
+if (execGit(`${tagCmd} --exact-match`, true))
+	throw Error(`Current commit already has tag ${version}`);
 
-if (version) throw Error(`Current commit already has tag ${version}`);
+const prevVersion = "v0.0.0-beta2";
+console.log("Bumping", prevVersion);
 
-const lastVersion = execGit(tagCmd, true) ?? "v0.0.0";
-console.log("Bumping", lastVersion);
+const newVersion = prevVersion.replace(
+	/^(v.*)([0-9]+)$/,
+	(_, p1, p2) => p1 + (parseInt(p2) + 1)
+);
+if (newVersion  == prevVersion)
+	throw Error(`invalid version number ${prevVersion}`);
 
-if (!lastVersion.match(/v[0-9]+\.[0-9]+\.[0-9]+/))
-	throw Error(`invalid version number ${lastVersion}`);
-
-const split = lastVersion.split(".");
-// Tags should only be missing for minor bumps.
-const last = parseInt(split.pop()) + 1;
-version = [...split, last].join(".");
-
-console.log("Tagging", version);
-execGit(`tag ${version}`);
+console.log("Tagging", newVersion);
+execGit(`tag ${newVersion}`);
 console.log("You probably want to push now");
 console.log("git push --tags origin master");
