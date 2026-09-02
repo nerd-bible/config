@@ -5,7 +5,7 @@ execGit("fetch --tags");
 if (execGit(`${tagCmd} --exact-match`, true))
 	throw Error(`Current commit already has tag ${version}`);
 
-const prevVersion = "v0.0.0-beta2";
+const prevVersion = execGit(tagCmd, true) ?? "v0.0.0";
 console.log("Bumping", prevVersion);
 
 const newVersion = prevVersion.replace(
